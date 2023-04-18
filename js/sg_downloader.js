@@ -4,7 +4,7 @@
 function resetForm()
 {
 	document.forms['customizer'].passedErrorCheck.value="no";
-	document.location = 'index.php';
+	document.location = 'index.html';
 }
 
 // CHECK FOR ERRORS AND TOGGLE VISIBILITY
