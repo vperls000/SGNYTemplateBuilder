@@ -1,0 +1,284 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="format-detection" content="telephone=no">
+
+<title>Siegel+Gale Template Downloader</title>
+
+<!-- LOAD HP UI ITEMS - ORIGINALLY DEVELOPED FOR/BY HP -->
+
+<script type="text/javascript">
+	var hp = {};
+</script>
+
+<link href="hp-ui/system/styles/hps-euro-fontface-core.css" media="screen" rel="stylesheet" type="text/css" /> 
+<link href="hp-ui/system/styles/ui-core-min-v2-hpe.css" media="screen" rel="stylesheet" type="text/css" /> 
+<link href="hp-ui/system/styles/molecules.css" media="screen" rel="stylesheet" type="text/css" /> 
+
+<script src="hp-ui/scripts/external/mootools-core-1.4.5-full-compat.js" type="text/javascript"></script>
+<script src="hp-ui/scripts/external/mootools-more-1.4.0.1.js" type="text/javascript"></script>
+<script src="../..//scripts/common/ui-core-min.js" type="text/javascript"></script>
+
+<link href="hp-ui/system/styles/patterns/typography.css" media="screen" rel="stylesheet" type="text/css"/>
+<link href="hp-ui/system/styles/patterns/forms.css" media="screen" rel="stylesheet" type="text/css" /> 
+<link href="hp-ui/system/styles/patterns/buttons.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="hp-ui/system/styles/patterns/checkboxes.css" media="screen" rel="stylesheet" type="text/css" />
+
+<script src="hp-ui/scripts/common/form-reset.js" type="text/javascript"></script>
+<script src="hp-ui/scripts/molecules/forms.js" type="text/javascript"></script>
+
+<script src="hp-ui/scripts/molecules/radio-checkboxes.js" type="text/javascript">
+<!--[if IE]>
+<link href="hp-ui/system/styles/molecules-ie.css" media="screen" rel="stylesheet" type="text/css"/>
+<![endif]-->
+<!--[if IE 6]>
+<script src="hp-ui/scripts/common/common-ie6.js" type="text/javascript">//</script>
+<![endif]-->
+</script>
+
+<!-- LOAD DOWNLOADER STYLES & SCRIPTS -->
+
+<link href="css/downloader_styles.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="js/sg_downloader.js" type="text/javascript"></script>
+
+</head>
+
+
+<body OnLoad="document.getElementById('wrapper').style.display = ''; document.customizer.menu_type.focus();">
+
+<noscript><p><strong>Please enable Javascript</strong><br />This page requires Javascript. Please <a href="http://www.enable-javascript.com/" target="_blank">enable Javascript</a> in your browser and reload this page.</p></noscript>
+
+<div id="wrapper" style="width: 475px; margin: 0px 0px; display: none;">
+
+<div style="clear: both;">
+
+<!-- INTRODUCTION -->
+
+<div style="clear: both;">
+	<p style="margin-bottom: 25px;">The Siegel+Gale template builder allows you to choose, customize and <strong>download</strong> Microsoft Office templates &mdash; agenda, email signature, envelope, fax, label, letter and PowerPoint. Using pull-down menus, you can select the item, size, city and even enter personal information (such as your name and contact information) to be pre-populated in some templates. After&nbsp;<strong>downloading</strong> to your computer, you can then use the template in Office as usual.<br /><br />Begin by making a selection in the menu below. Fields marked with <span class="requiredtext">*</span> are required.</p>
+</div>
+
+<!-- START OF FORM -->
+
+<form name="customizer" id="customizer" method="post" accept-charset="UTF-8" action="index.php">
+
+<!-- TYPE MENU -->
+
+<div id="div_menu_type">
+	<table border="0" cellspacing="0" cellpadding="0">
+	<tr valign="top">
+		<td width="100px" valign="middle">Type<span class="requiredtext">*</span></td>
+		<td width="265px" valign="middle">
+			<div class="styled-select">
+				<select name="menu_type" id="menu_type" onchange="processMenuType(); errorCheck();">
+					<option value="disabled" disabled selected> Choose type of document</option>
+					<option value="Agenda"> Agenda</option>
+					<option value="Email"> Email Signature Installer</option>
+					<option value="Envelope"> Envelope</option>
+					<option value="Fax"> Fax</option>
+					<!-- <option value="Label"> Label</option> -->
+					<option value="LabelGeneric"> Label</option>
+					<option value="Letter"> Letter</option>
+					<option value="PowerPoint"> PowerPoint</option>
+					<option value="Simple"> Simple Word Document</option>
+				</select>
+			</div>
+			</td>
+		<td style="color: #DA291C; font-size: 10px;" valign="middle"><span id="error_type">Type of document</span></td>
+	</tr>
+	</table>
+</div>
+
+<!-- SIZE MENU -->
+
+<div id="div_menu_size" style="display: none;">
+	<table border="0" cellspacing="0" cellpadding="0">
+	<tr valign="top">
+		<td width="100px" valign="middle">Size<span class="requiredtext">*</span></td>
+		<td width="265px" valign="middle">
+			<div class="styled-select">
+				<select name="menu_size" id="menu_size" onchange="processMenuSize(); errorCheck();">
+					<option value="disabled" disabled selected></option>
+				</select>
+			</div>
+			</td>
+		<td style="color: #DA291C; font-size: 10px;" valign="middle"><span id="error_size">Size</span></td>
+	</tr>
+	</table>
+</div>
+
+<!-- PRINTING MENU -->
+
+<div id="div_menu_printing" style="display: none;">
+	<table border="0" cellspacing="0" cellpadding="0">
+	<tr valign="top">
+		<td width="100px" valign="middle">Printing<span class="requiredtext">*</span></td>
+		<td width="265px" valign="middle">
+			<div class="styled-select">
+				<select name="menu_printing" id="menu_printing" onchange="processMenuPrinting(); errorCheck();">
+					<option value="disabled" disabled selected></option>
+				</select>
+			</div>
+			</td>
+		<td style="color: #DA291C; font-size: 10px;" valign="middle"><span id="error_printing">Printing</span></td>
+	</tr>
+	</table>
+</div>
+
+<!-- CITY MENU -->
+
+<div id="div_menu_city" style="display: none;">
+	<table border="0" cellspacing="0" cellpadding="0">
+	<tr valign="top">
+		<td width="100px" valign="middle">City<span class="requiredtext">*</span></td>
+		<td width="265px" valign="middle">
+			<div class="styled-select">
+				<select name="menu_city" id="menu_city" onchange="processMenuCity(); errorCheck();">
+					<option value="disabled" disabled selected></option>
+				</select>
+			</div>
+			</td>
+		<td style="color: #DA291C; font-size: 10px;" valign="middle"><span id="error_city">City</span></td>
+	</tr>
+	</table>
+</div>
+
+<!-- CITY INFO -->
+
+<div id="div_city_info" style="margin-top: 5px; margin-bottom: 10px; display: none;">
+	<table border="0" cellspacing="0" cellpadding="0">
+	<tr valign="top">
+		<td width="100px" valign="top">Office Info</td>
+		<td colspan="2" valign="top">
+			<div style="margin-left: -2px;">
+			<div id="div_city_address" style="font-size: 11px;"></div>
+			<div id="div_city_phone" style="font-size: 11px;"></div>
+			</div>
+			</td>
+	</tr>
+	</table>	
+</div>
+
+<!-- PERSONALIZATION SECTION -->
+
+<div id="div_personalization_section" style="margin-top: 2px; display: none;">
+
+	<table border="0" cellspacing="0" cellpadding="0">
+
+	<tr>
+		<td width="100px" valign="middle">Name<span class="requiredtext">*</span></td>
+		<td width="265px" valign="middle"><input type="text" name="myname" value="" onkeyup="errorCheck();" /></td>
+		<td style="color: #DA291C; font-size: 10px;" valign="middle"><span id="error_myname" onclick="document.forms['customizer'].myname.value = 'Jane Smith'; errorCheck();">Jane Smith</span></td>
+	</tr>
+
+	<tr>
+		<td valign="middle">Title 1<span class="requiredtext">*</span></td>
+		<td valign="middle"><input type="text" name="mytitle1" value="" onkeyup="errorCheck();" /></td>
+		<td style="color: #DA291C; font-size: 10px;" valign="middle"><span id="error_mytitle1" onclick="document.forms['customizer'].mytitle1.value = 'Vice President'; errorCheck();">Vice President</span></td>
+	</tr>
+
+	<tr>
+		<td valign="middle">Title 2</td>
+		<td valign="middle"><input type="text" name="mytitle2" value="" onkeyup="errorCheck();" /></td>
+		<td style="color: #7F7F7F; font-size: 10px;" valign="middle"><span id="error_mytitle2" onclick="document.forms['customizer'].mytitle2.value = 'Development'; errorCheck();">Development</span></td>
+	</tr>
+
+	<tr>
+		<td valign="middle">Telephone 1<span class="requiredtext">*</span></td>
+		<td valign="middle"><input type="text" style="width: 160px;" name="myphone1" value="" onkeyup="errorCheck();" onblur="formatPhone(this);" />
+			<span class="rdbut"><a onclick="" href="javascript:void(0)" class="rbtn enabl "><input checked="true" class="hidden" name="myphonetype1" value="T" type="radio" /><span style="font-size: 11px; line-height: 18px;">T</span></a></span>
+    		<span class="rdbut"><a onclick="" href="javascript:void(0)" class="rbtn enabl "><input class="hidden" name="myphonetype1" value="M" type="radio" /><span style="font-size: 11px; line-height: 18px;">M</span></a></span>
+			</td>
+		<td style="color: #DA291C; font-size: 10px;" valign="middle"><span id="error_myphone1" onclick="document.forms['customizer'].myphone1.value = '+0 000 000 0000'; errorCheck();">+0 000 000 0000</span></td>
+	</tr>
+
+	<tr>
+		<td valign="middle">Telephone 2</td>
+		<td valign="middle"><input type="text" style="width: 160px;" name="myphone2" value="" onkeyup="errorCheck();" onblur="formatPhone(this);" />
+			<span class="rdbut"><a onclick="" href="javascript:void(0)" class="rbtn enabl "><input class="hidden" name="myphonetype2" value="T" type="radio" /><span style="font-size: 11px; line-height: 18px;">T</span></a></span>
+    		<span class="rdbut"><a onclick="" href="javascript:void(0)" class="rbtn enabl "><input checked="true" class="hidden" name="myphonetype2" value="M" type="radio" /><span style="font-size: 11px; line-height: 18px;">M</span></a></span>
+			</td>
+		<td style="color: #7F7F7F; font-size: 10px;" valign="middle"><span id="error_myphone2" onclick="document.forms['customizer'].myphone2.value = '+0 000 000 0000';">+0 000 000 0000</span></td>
+	</tr>
+
+	<tr>
+		<td valign="middle">Email address<span class="requiredtext">*</span></td>
+		<td valign="middle"><input type="text" name="myemail" value="" onkeyup="errorCheck();" /></td>
+		<td style="color: #DA291C; font-size: 10px;" valign="middle"><span id="error_myemail" onclick="document.forms['customizer'].myemail.value = 'jsmith@siegelgale.com'; errorCheck();">jsmith@siegelgale.com</span></td>
+	</tr>
+
+	<tr>
+		<td valign="middle">Twitter</span></td>
+		<td valign="middle"><input type="text" name="mytwitter" value="" onkeyup="errorCheck();" onblur="formatTwitter(this);" /></td>
+		<td style="color: #7F7F7F; font-size: 10px;" valign="middle"><span id="error_mytwitter" onclick="document.forms['customizer'].mytwitter.value = '@janesmith';">@janesmith</span></td>
+	</tr>
+
+	</table>
+	
+</div>
+
+<!-- SUBMIT BUTTON -->
+
+<div id="div_submit_button" style="margin-top: 10px;">
+
+	<table border="0" cellspacing="0" cellpadding="0">
+
+	<tr>
+		<td width="95px" valign="middle"><br /></td>
+		<td width="265px" valign="middle"><div style="margin-left: -2px;"><a id="submit_button" rel="" onclick="displayHelp('display');" href="javascript:void();" class="button slim critical_disabled" title="When active (red), create and download template with the above information."><span class="btn_label">Create / Download</span></a><a href="javascript:resetForm();" class="button slim secondary" style="margin-left: 10px;" title="Clear all entered information now."><span class="btn_label">Reset</span></a></div></td>
+		<td><br /></td>
+	</tr>
+
+	</table>
+
+</div>
+
+<!-- DOWNLOAD INSTRUCTIONS -->
+
+<div id="div_display_download_instructions" style="margin-left: 98px; margin-top: 20px;">
+	<a href="javascript:displayHelp('toggle');"><span style="color: #7F7F7F; font-size: 10px;"><img src="images/info_icon_16x16.png" style="height: 16px; width: 16px; vertical-align: middle;" alt="" /> Help</span></a>
+</div>
+
+<div id="div_download_instructions" style="margin-left: 98px; margin-top: 20px; padding: 10px; width: 355px; background-image: url('images/gradient.png'); background-repeat: repeat-y; display: none;">
+</div>
+
+<!-- ERROR CHECK -->
+
+<input type="hidden" name="passedErrorCheck" value="no">
+
+</form>
+
+<!-- END OF FORM -->
+
+</div>
+
+</div>
+
+<!-- HP UI ITEMS - ORIGINALLY DEVELOPED FOR/BY HP -->
+
+<script type="text/javascript">
+
+document.addEvent('domready', function() {
+
+//dynamically generated from used molecules
+
+inputColorChange();
+
+initAutoResizableTextareas("js_auto_resize");
+
+initCheckBoxes();
+
+initRadioButtons();
+
+});
+
+</script>
+
+</body>
+
+</html>
