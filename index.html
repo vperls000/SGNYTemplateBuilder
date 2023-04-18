@@ -40,10 +40,10 @@
 <form name="customizer" id="customizer" method="post" accept-charset="UTF-8" action="index.html">
 
 <!-- TYPE MENU -->
-<div class="container-sm" id="div_menu_type">
+<div class="container-md" id="div_menu_type">
 	<label for="menu_type" class="form-label">Choose a type of document</label>
 	<select class="form-select-sm" name="menu_type" id="menu_type" onchange="processMenuType(); errorCheck();">
-		<option value="disabled" disabled selected> Choose type of document</option>
+		<option value="disabled" disabled selected> </option>
 		<option value="Agenda"> Agenda</option>
 		<option value="Email"> Email Signature Installer</option>
 		<option value="Envelope"> Envelope</option>
@@ -56,57 +56,29 @@
 </div>
 
 <!-- SIZE MENU -->
-
-<div id="div_menu_size" style="display: none;">
-	<table border="0" cellspacing="0" cellpadding="0">
-	<tr valign="top">
-		<td width="100px" valign="middle">Size<span class="requiredtext">*</span></td>
-		<td width="265px" valign="middle">
-			<div class="styled-select">
-				<select name="menu_size" id="menu_size" onchange="processMenuSize(); errorCheck();">
-					<option value="disabled" disabled selected></option>
-				</select>
-			</div>
-			</td>
-		<td style="color: #DA291C; font-size: 10px;" valign="middle"><span id="error_size">Size</span></td>
-	</tr>
-	</table>
+<div class="container-md" id="div_menu_size" style="display: none">
+	<label for="menu_size" class="form-label">Size:</label>
+	<select class="form-select-sm" name="menu_size" id="menu_size" onchange="processMenuSize(); errorCheck();">
+		<option value="disabled" disabled selected></option>
+	</select>
 </div>
 
 <!-- PRINTING MENU -->
 
-<div id="div_menu_printing" style="display: none;">
-	<table border="0" cellspacing="0" cellpadding="0">
-	<tr valign="top">
-		<td width="100px" valign="middle">Printing<span class="requiredtext">*</span></td>
-		<td width="265px" valign="middle">
-			<div class="styled-select">
-				<select name="menu_printing" id="menu_printing" onchange="processMenuPrinting(); errorCheck();">
-					<option value="disabled" disabled selected></option>
-				</select>
-			</div>
-			</td>
-		<td style="color: #DA291C; font-size: 10px;" valign="middle"><span id="error_printing">Printing</span></td>
-	</tr>
-	</table>
+<div class="container-md" id="div_menu_printing" style="display: none;">
+	<label for="menu_printing" class="form-label">Printing format:</label>
+	<select class="form-select-md" name="menu_printing" id="menu_printing" onchange="processMenuPrinting(); errorCheck();">
+		<option value="disabled" disabled selected></option>
+	</select>
 </div>
 
 <!-- CITY MENU -->
 
-<div id="div_menu_city" style="display: none;">
-	<table border="0" cellspacing="0" cellpadding="0">
-	<tr valign="top">
-		<td width="100px" valign="middle">City<span class="requiredtext">*</span></td>
-		<td width="265px" valign="middle">
-			<div class="styled-select">
-				<select name="menu_city" id="menu_city" onchange="processMenuCity(); errorCheck();">
-					<option value="disabled" disabled selected></option>
-				</select>
-			</div>
-			</td>
-		<td style="color: #DA291C; font-size: 10px;" valign="middle"><span id="error_city">City</span></td>
-	</tr>
-	</table>
+<div class="container-md" id="div_menu_city" style="display: none;">
+	<label for="menu_city" class="form-label">City:</label>
+		<select name="menu_city" id="menu_city" onchange="processMenuCity(); errorCheck();">
+			<option value="disabled" disabled selected></option>
+		</select>
 </div>
 
 <!-- CITY INFO -->
