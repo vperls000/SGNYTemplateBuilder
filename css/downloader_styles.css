@@ -1,0 +1,96 @@
+body, p {
+	background: #ffffff;
+	padding: 0;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	}
+
+table {
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 12px;
+	}
+
+img {
+	border: 0;
+	}
+
+input[type="text"], select {
+	margin-bottom: 6px;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 11px;
+	border: none;  
+	background: none;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	}
+
+input[type="text"] {
+	width: 251px; /* 4px less than select width to offset outline */
+	outline: 2px #CCCCCC solid;
+	text-indent: 3px;
+	}
+
+input[type="text"]:focus {
+	outline: 2px #5A5A5A solid;
+	}
+
+input[type="text"] {
+	height: 18px;
+	}
+
+input[type="radio"] {
+	width: 12px;
+	margin-left: 5px;
+	margin-bottom: 4px;
+	vertical-align: middle;
+	}
+
+input[type="checkbox"] {
+	margin: 0px;
+  	}
+
+select {
+	height: 22px;
+	-moz-appearance: window; /* Remove FireFox default arrow */
+	}
+
+.requiredtext {
+	color: #DA291C; /* S+G Red */
+	}
+
+.styled-select {
+    overflow: hidden;
+    background: url('../images/dd_plus.gif') no-repeat right;
+	width: 255px;
+	height: 22px;
+	margin-left: -2px;
+	margin-bottom: 2px;
+}
+
+.styled-select select {
+    -webkit-appearance: none;
+    -moz-appearance: window;
+    width: 255px;
+}
+
+.styled-select option {
+}
+
+/* Following styles to override parts of specific HP styles */
+
+.rdbut .rbtn {
+	margin-right: 5px;
+    margin-left: 5px;
+}
+
+.button {
+	font-family: Helvetica,Arial,sans-serif;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	padding: 0 10px;
+	height: 30px;
+}
+
+.button.slim .btn_label, .slim input {
+	font-size: 12px;
+}
