@@ -37,32 +37,22 @@
 
 <!-- START OF FORM -->
 
-<form name="customizer" id="customizer" method="post" accept-charset="UTF-8" action="index.php">
+<form name="customizer" id="customizer" method="post" accept-charset="UTF-8" action="index.html">
 
 <!-- TYPE MENU -->
-
 <div id="div_menu_type">
-	<table border="0" cellspacing="0" cellpadding="0">
-	<tr valign="top">
-		<td width="100px" valign="middle">Type<span class="requiredtext">*</span></td>
-		<td width="265px" valign="middle">
-			<div class="styled-select">
-				<select name="menu_type" id="menu_type" onchange="processMenuType(); errorCheck();">
-					<option value="disabled" disabled selected> Choose type of document</option>
-					<option value="Agenda"> Agenda</option>
-					<option value="Email"> Email Signature Installer</option>
-					<option value="Envelope"> Envelope</option>
-					<option value="Fax"> Fax</option>
-					<option value="LabelGeneric"> Label</option>
-					<option value="Letter"> Letter</option>
-					<option value="PowerPoint"> PowerPoint</option>
-					<option value="Simple"> Simple Word Document</option>
-				</select>
-			</div>
-			</td>
-		<td style="color: #DA291C; font-size: 10px;" valign="middle"><span id="error_type">Type of document</span></td>
-	</tr>
-	</table>
+	<label for="menu_type" class="form-label">Choose a type of document</label>
+	<select class="form-select" name="menu_type" id="menu_type" onchange="processMenuType(); errorCheck();">
+		<option value="disabled" disabled selected> Choose type of document</option>
+		<option value="Agenda"> Agenda</option>
+		<option value="Email"> Email Signature Installer</option>
+		<option value="Envelope"> Envelope</option>
+		<option value="Fax"> Fax</option>
+		<option value="LabelGeneric"> Label</option>
+		<option value="Letter"> Letter</option>
+		<option value="PowerPoint"> PowerPoint</option>
+		<option value="Simple"> Simple Word Document</option>
+	</select>
 </div>
 
 <!-- SIZE MENU -->
